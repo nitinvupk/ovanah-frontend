@@ -1,4 +1,38 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React Task with metaweather api
+
+Overview:
+
+The task basically user login with username and password.
+show weather forecast details.
+
+Technologies Used:
+
+- Api https://www.metaweather.com/api/ .
+- Use axios to fetch data.
+- Use mateial ui for components.
+- Use Redux to hold weather information.
+- Get user's geolocation.
+-
+
+Functionality inside:
+
+- Sign IN with username and password.
+- User should be able to log in using his username and password.
+- Authorized user geolocation .
+- User should be able to see weather information.
+- User should be able to search city.
+- User should be able to weather information by city.
+
+- Requirement
+  - NODE - NPM should be installed.
+
+- Setup
+ - Open project directory and run `npm install`
+
+- Run
+  - Open project directory and run `npm start`.
+
+This project was mateial-ui with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 

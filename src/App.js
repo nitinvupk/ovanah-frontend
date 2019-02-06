@@ -1,25 +1,28 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Router, Route, Switch, Redirect } from 'react-router-dom';
+import history from './history';
+import Login from './containers/user';
+import User from './containers/userInfo';
+// import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
+// const theme = createMuiTheme();
 
 class App extends Component {
   render() {
+    //
+    const PrivateRoute = ({ component: Component, ...rest }) => (
+      <Route {...rest} render={(props) => window.localStorage.getItem('token') ?
+      <Component {...props}/> : <Redirect to='/'/>}
+      />
+    );
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+      <Router history={history}>
+        <Switch>
+          <PrivateRoute path='/user' component={User}/>
+          <Route exact path='/' component={Login}/>
+        </Switch>
+      </Router>
       </div>
     );
   }
